@@ -29,6 +29,7 @@
 ## Непрерывная интеграция
 
 Настройка CI с использованием GitHub Actions выполняется автоматически при каждом пуше в репозиторий. Статус последней сборки:
+
 ![Java CI with Maven](https://github.com/Keb4boy/Software-Engenering-TZ2/actions/workflows/java.yaml/badge.svg)
 
 ### Клонирование репозитория
