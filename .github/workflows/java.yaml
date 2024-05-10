@@ -2,11 +2,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -26,7 +24,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin'
+        distribution: 'temurin' 
 
     - name: Cache Maven packages
       uses: actions/cache@v3
