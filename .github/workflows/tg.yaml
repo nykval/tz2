@@ -1,6 +1,6 @@
 - name: Уведомление в Telegram
   uses: appleboy/telegram-action@master
   with:
-    to: <chat_id>
+    to: @an_grecha
     token: ${{ secrets.6998722120:AAGYd09ymJMm8W2SjoDM3BRBBa0neU9An_U}}
     args: "Сборка успешно завершена"
