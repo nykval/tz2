@@ -44,7 +44,7 @@ jobs:
       if: failure()
       uses: appleboy/telegram-action@master
       with:
-        to: -1002121798245
+        to: ${{ secrets.CHAT_ID }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         format: markdown
         message: |
@@ -59,11 +59,11 @@ jobs:
       if: success()
       uses: appleboy/telegram-action@master
       with:
-        to: -1002121798245
+        to: ${{ secrets.CHAT_ID }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         format: markdown
         message: |
-          ✅ Build Succeeded ✅
+          ✅ ВСЕ ОК ✅
           *Repository*: ${{ github.repository }}
           *Actor*: ${{ github.actor }}
           *Commit*: ${{ github.sha }}
