@@ -1,10 +1,14 @@
-    - name: Notify on Telegram
-      if: always()
-      uses: appleboy/telegram-action@master
-      with:
-        to: -1002121798245
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          Build ${{ job.status }}
-          Commit: ${{ github.sha }}
-          Actor: ${{ github.actor }}
+- name: Notify on Telegram
+  if: always()
+  uses: appleboy/telegram-action@master
+  with:
+    to: -1002121798245
+    token: ${{ secrets.TELEGRAM_TOKEN }}
+    message: |
+      Сборка ${{ job.status }}
+      Коммит: ${{ github.sha }}
+      Автор: ${{ github.actor }} Аннотации
+
+steps:
+  - uses: actions/checkout@v2
+  - uses: actions/setup-java@v2
