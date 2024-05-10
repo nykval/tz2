@@ -32,6 +32,10 @@
 
 ![Java CI with Maven](https://github.com/Keb4boy/Software-Engenering-TZ2/actions/workflows/java.yaml/badge.svg)
 
+## Ссылка на Telegram-бота
+
+t.me/Software_engenering_tz2_bot
+
 ### Клонирование репозитория
 
 ```bash
