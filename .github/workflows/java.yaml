@@ -45,7 +45,7 @@ jobs:
       uses: appleboy/telegram-action@master
       with:
         to: -1002121798245
-        token: 6998722120:AAGYd09ymJMm8W2SjoDM3BRBBa0neU9An_U
+        token: ${{ secrets.TELEGRAM_TOKEN }}
         format: markdown
         message: |
           🚨 Build Failed 🚨
@@ -60,7 +60,7 @@ jobs:
       uses: appleboy/telegram-action@master
       with:
         to: -1002121798245
-        token: 6998722120:AAGYd09ymJMm8W2SjoDM3BRBBa0neU9An_U
+        token: ${{ secrets.TELEGRAM_TOKEN }}
         format: markdown
         message: |
           ✅ Build Succeeded ✅
