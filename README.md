@@ -25,6 +25,12 @@
 - Java JDK 11 или выше
 - Maven
 
+### Клонирование репозитория
+
+```bash
+git clone https://github.com/Keb4boy/Software-Engenering-TZ2.git
+cd Software-Engenering-TZ2
+```
 
 ## Непрерывная интеграция
 
@@ -36,10 +42,6 @@
 
 t.me/Software_engenering_tz2_bot
 
-### Клонирование репозитория
 
-```bash
-git clone https://github.com/Keb4boy/Software-Engenering-TZ2.git
-cd Software-Engenering-TZ2
 
 
