@@ -45,8 +45,30 @@ public class NumberProcessor {
         return prod;
     }
 
+    public static void measureSumPerformance(String fileName) throws IOException {
+        List<Integer> nums = readNumbersFromFile(fileName);
+        long startTime = System.nanoTime();
+        _sum(nums);
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime) / 1_000_000;
+        System.out.println("Время выполнения для " + fileName + ": " + duration + " мс");
+    }
+
     public static void main(String[] args) {
         try {
+            String[] testFiles = {
+                    "tests/numbers_10.txt",
+                    "tests/numbers_100.txt",
+                    "tests/numbers_1000.txt",
+                    "tests/numbers_10000.txt",
+                    "tests/numbers_100000.txt",
+                    "tests/numbers_1000000.txt"
+            };
+
+            for (String file : testFiles) {
+                measureSumPerformance(file);
+            }
+
             List<Integer> nums = readNumbersFromFile("numbers_10.txt");
             System.out.println("Минимальное число: " + _min(nums));
             System.out.println("Максимальное число: " + _max(nums));
