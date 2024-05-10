@@ -19,3 +19,14 @@ jobs:
         run: mvn -B package --file pom.xml
       - name: Run tests
         run: mvn test
+      - name: Notify Telegram
+        if: always()
+        uses: appleboy/telegram-action@master
+        with:
+          to: -1002121798245
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *Build ${{ github.run_number }} ${{ job.status }}*
+            Commit: [${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
+            Actor: ${{ github.actor }}
