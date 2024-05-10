@@ -1,5 +1,8 @@
 # Software Engineering TZ2
 
+![Java CI with Maven](https://github.com/Keb4boy/Software-Engenering-TZ2/actions/workflows/java.yml/badge.svg)
+
+
 Проект "Software Engineering TZ2" представляет собой Java-приложение, которое считывает числа из файла и выполняет различные арифметические операции, такие как поиск минимального и максимального числа, расчет суммы и произведения чисел.
 
 ## Возможности
