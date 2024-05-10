@@ -42,6 +42,8 @@ cd Software-Engenering-TZ2
 
 t.me/Software_engenering_tz2_bot
 
+Chat ID: -1002121798245
+
 
 
 
