@@ -1,4 +1,4 @@
-![Java CI with Maven](https://github.com/Keb4boy/Software-Engenering-TZ2/actions/workflows/main.yml/badge.svg)
+![Java CI with Maven](https://github.com/Keb4boy/Software-Engenering-TZ2/actions/workflows/java.yaml/badge.svg)
 
 
 # Software Engineering TZ2
