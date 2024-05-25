@@ -69,7 +69,7 @@ public class NumberProcessor {
                 measureSumPerformance(file);
             }
 
-            List<Integer> nums = readNumbersFromFile("numbers_10.txt");
+            List<Integer> nums = readNumbersFromFile("tests/numbers_10.txt");
             System.out.println("Минимальное число: " + _min(nums));
             System.out.println("Максимальное число: " + _max(nums));
             System.out.println("Сумма чисел: " + _sum(nums));

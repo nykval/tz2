@@ -25,6 +25,12 @@
 - Java JDK 11 или выше
 - Maven
 
+### Клонирование репозитория
+
+```bash
+git clone https://github.com/Keb4boy/Software-Engenering-TZ2.git
+cd Software-Engenering-TZ2
+```
 
 ## Непрерывная интеграция
 
@@ -32,10 +38,13 @@
 
 ![Java CI with Maven](https://github.com/Keb4boy/Software-Engenering-TZ2/actions/workflows/java.yaml/badge.svg)
 
-### Клонирование репозитория
+## Ссылка на Telegram-бота
 
-```bash
-git clone https://github.com/Keb4boy/Software-Engenering-TZ2.git
-cd Software-Engenering-TZ2
+t.me/Software_engenering_tz2_bot
+
+Chat ID: -1002121798245
 
 
+
+
+# tz2
