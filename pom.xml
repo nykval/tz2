@@ -13,11 +13,25 @@
     </properties>
 
     <dependencies>
+        <!-- Зависимость для JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.0</version>
             <scope>test</scope>
+        </dependency>
+        <!-- Зависимость для JUnit Vintage (для поддержки старых тестов на основе JUnit 4) -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.8.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Зависимость для JFreeChart -->
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.3</version>
         </dependency>
     </dependencies>
 

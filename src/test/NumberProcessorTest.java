@@ -3,7 +3,6 @@ package main;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.Assert;
-import main.NumberProcessor;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,23 +11,37 @@ import java.math.BigInteger;
 public class NumberProcessorTest {
     private List<Integer> testNumbers;
 
+    /**
+     * Устанавливает тестовые данные перед каждым тестом.
+     * Читает числа из файла для использования в тестах.
+     * @throws IOException если возникает ошибка при чтении файла
+     */
     @Before
     public void setUp() throws IOException {
         testNumbers = NumberProcessor.readNumbersFromFile("tests/numbers_10.txt");
     }
 
+    /**
+     * Тестирует функцию _min, проверяя, что результат находится в списке чисел.
+     */
     @Test
     public void testMinFunction() {
         int actualMin = NumberProcessor._min(testNumbers);
         Assert.assertTrue(testNumbers.contains(actualMin));
     }
 
+    /**
+     * Тестирует функцию _max, проверяя, что результат находится в списке чисел.
+     */
     @Test
     public void testMaxFunction() {
         int actualMax = NumberProcessor._max(testNumbers);
         Assert.assertTrue(testNumbers.contains(actualMax));
     }
 
+    /**
+     * Тестирует функцию _sum, сравнивая результат с ожидаемой суммой.
+     */
     @Test
     public void testSumFunction() {
         long actualSum = NumberProcessor._sum(testNumbers);
@@ -36,6 +49,9 @@ public class NumberProcessorTest {
         Assert.assertEquals(expectedSum, actualSum);
     }
 
+    /**
+     * Тестирует функцию _mult, сравнивая результат с ожидаемым произведением.
+     */
     @Test
     public void testProductFunction() {
         BigInteger actualProduct = NumberProcessor._mult(testNumbers);
@@ -43,34 +59,28 @@ public class NumberProcessorTest {
         Assert.assertEquals(expectedProduct, actualProduct);
     }
 
-    @Test
-    public void testIOExceptionInReadNumbers() {
+    /**
+     * Тестирует обработку IOException в функции readNumbersFromFile.
+     * Ожидается, что будет выброшено исключение IOException.
+     * @throws IOException если возникает ошибка при чтении файла
+     */
+    @Test(expected = IOException.class)
+    public void testIOExceptionInReadNumbers() throws IOException {
         String nonExistingFile = "non_existing_file.txt";
-        try {
-            NumberProcessor.readNumbersFromFile(nonExistingFile);
-            Assert.fail("Expected an IOException to be thrown");
-        } catch (IOException e) {
-            // Expected exception, successful test
-        }
+        NumberProcessor.readNumbersFromFile(nonExistingFile);
     }
 
-    @Test
+    /**
+     * Тестирует производительность функции measureSumPerformance.
+     * Проверяет, что время выполнения не превышает ожидаемого значения.
+     * @throws IOException если возникает ошибка при чтении файла
+     */
+    @Test(timeout = 10)
     public void testSumPerformance() throws IOException {
-        long expectedExecutionTime = 10;
-        long actualExecutionTime = measureExecutionTime(() -> {
-            try {
-                NumberProcessor.measureSumPerformance("tests/numbers_10.txt");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        Assert.assertTrue(actualExecutionTime <= expectedExecutionTime);
-    }
-
-    private long measureExecutionTime(Runnable task) {
         long startTime = System.currentTimeMillis();
-        task.run();
+        NumberProcessor.measureSumPerformance("tests/numbers_10.txt");
         long endTime = System.currentTimeMillis();
-        return endTime - startTime;
+        long actualExecutionTime = endTime - startTime;
+        Assert.assertTrue(actualExecutionTime <= 10);
     }
 }
